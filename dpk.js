@@ -38,7 +38,7 @@ const deterministicPartitionKey = (event) => {
     // checking if event is truthy or falsy
     const { partitionKey } = event; // destructuring the partitionKey property from the event object
     candidate = partitionKey
-      ? partitionKey.toString()
+      ? partitionKey?.toString()
       : createHash(JSON.stringify(event)); // ternary operator to check if partitionKey is truthy or falsy and assign it to candidate variable
   }
 
